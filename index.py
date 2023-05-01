@@ -83,7 +83,7 @@ print(arr)
 # arr.pop()
 print(arr)
 
-
+#  Array 
 
 n = len(arr)
 i = 0
@@ -91,7 +91,6 @@ sum =0
 
 while(i <= n-1):
     if(arr[i] == 8):
-        # print('sajhkajd')
         i+=1
         continue
     sum+=arr[i] # sum = sum + arr[i]
