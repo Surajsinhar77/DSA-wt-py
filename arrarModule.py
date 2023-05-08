@@ -140,7 +140,6 @@
 #  5 6 7 8 9 
 #  5 6 8 9 
 
-
 # searching 
 
 # import array as ary
@@ -157,6 +156,97 @@
 #         break
 
 # print(A)
+
+
+# def sum(a , b , y ):
+#     print(a+b)
+
+# a = 7
+# b = 2.4
+# ans = sum(a , b, 1)
+# print(ans)
+
+
+# import array as ary
+# A = ary.array('i', [1, 3, 4, 6, 8, 9])
+
+# def arraYSum(B):
+#     sum = 0
+#     for i in range(len(B)):
+#         sum+=B[i]
+#     return sum 
+
+# # print(B)
+
+# print(arraYSum(A))
+
+# tow Pointer approach 
+# import array as ary
+# A = ary.array('i', [1, 3, 4, 6, 8, 9, 10])
+
+# i = 0
+# j = len(A)-1
+
+# while(i<=j):
+#     print(A[i])
+#     print(A[j])
+#     i+=1
+#     j-=1
+
+
+#  1 2 3  3 2 1
+
+#  1 2 3 4    4 3 2 1 
+
+import array as ary
+A = ary.array('i', [1, 3, 4, 6, 8, 9, 10])
+
+# B = ary.array('i', []) # 10 9 .... 1 
+
+# j = len(A)-1
+# while(j >=0):
+#     B.append(A[j])
+#     j-=1
+
+# print(B)
+
+# i  = 0
+# j = len(A)-1
+
+# while(i<j):
+#     temp = A[i]
+#     A[i] = A[j]
+#     A[j] = temp
+#     i+=1
+#     j-=1
+
+
+# print(A)
+
+
+# number = 1234  #  4321
+
+# 1234%10  = 4
+# 1234/10  = 123
+# 12%10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
