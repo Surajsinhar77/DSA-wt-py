@@ -15,12 +15,17 @@ def binaryS(arr, lb, ub, k):
             return -1
 
 
+
+
 import array as ar
 arr = ar.array('i', [])
 
 
+size = int(input())
+
 print(arr)
-for i in range(0,59):
+
+for i in range(0,size):
     a = int(input())
     if(a == -1):
         break
@@ -28,4 +33,4 @@ for i in range(0,59):
 
 item = int(input("item to find : "))
 
-print( binaryS(arr, 0, len(arr), item))
+print( binaryS(arr, 0, len(arr)-1, item))
