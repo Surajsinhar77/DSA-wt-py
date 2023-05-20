@@ -35,13 +35,11 @@ def mergeSort(arr, f , l):
     if(f >= l):
         return
 
-    print("ansdka")
     mid = int((f+l)/2)
     print(mid)
     mergeSort(arr, f ,mid)
     mergeSort(arr, mid+1, l)
     merge(arr, f , mid , l)
-    print(arr)
 
 
 ary1 = ary.array('i', [])
