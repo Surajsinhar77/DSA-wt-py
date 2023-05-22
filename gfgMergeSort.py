@@ -4,7 +4,6 @@ def merge(self,arr, f, mid, l):
         n1 = mid
         n2 = l
         ans = []
-       
         while(i<=n1 and j<=n2):
             if(arr[i] < arr[j]):
                 ans.append(arr[i])
