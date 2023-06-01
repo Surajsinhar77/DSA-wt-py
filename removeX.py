@@ -39,7 +39,6 @@ def removeXfromStr(str, s , l):
     removeXfromStr(str, s+1, l)
 
 
-
 str = input("enter string: ")
 strA = list(str)
 
