@@ -81,44 +81,97 @@ using namespace std;
 
 // }
 
-void ReverseString(char input[],int &x,int &y)
+// void ReverseString(char input[],int &x,int &y)
+// {
+//     cout<<"hello"<<endl;// infinite loop chal raha hai
+//     if(x>=y)
+//     {
+//         return;
+//     }
+
+//     if(x<y)
+//     {
+//         char temp = input[x];
+//         input[x] = input[y];
+//         input[y] = temp;
+//     }
+//     x++;
+//     y--;
+//     ReverseString(input,x, y);
+//     cout<<"hello"<<endl;
+// }
+
+
+// int getLength(char arr[]){
+//     int i =0;
+//     while(arr[i] != '\0'){
+//         i++;
+//     }
+//     return i;
+// }
+
+
+
+// int main()
+// {
+//     char input[100];
+//     cin.getline(input,100);
+//     int size = getLength(input);
+//     int start = 0;
+//     ReverseString(input, start, size);
+//     cout<<input<<endl;
+//     return 0;
+// }
+
+int length(char input[])
 {
-    cout<<"hello"<<endl;// infinite loop chal raha hai
-    if(x>=y)
+    int count=0;
+    for(int i=0;input[i]!='\0';i++)
     {
-        return;
+        count+=1;
     }
-
-    if(x<y)
-    {
-        char temp = input[x];
-        input[x] = input[y];
-        input[y] = temp;
-    }
-    x++;
-    y--;
-    ReverseString(input,x, y);
-    cout<<"hello"<<endl;
+    return count;
 }
 
-
-int getLength(char arr[]){
-    int i =0;
-    while(arr[i] != '\0'){
-        i++;
+void shift(char input[], int size)
+{
+    bool flag = false;
+    int y = size-1;
+    while(y > 0 )
+    {                          // 12345  1234 5
+        input[y+2] = input[y]; // abhay
+        input[y+1] = ' ';
+        y--;
     }
-    return i;
+    input[size+(size-1)] = '\0';
 }
 
-
+// void spaceBEletter(char input[])
+// {
+//     int x1=0;
+//     int size1 = length(input);
+//     // while(x1 <= size1-1)
+//     // {
+//     //     if(input[x1]!=' ')
+//     //     {
+//     //         shift(input,x1,size1);
+//     //         size1 = smallSize;
+//     //     }
+//     //     x1++;
+//     // }
+// }
 
 int main()
 {
     char input[100];
     cin.getline(input,100);
-    int size = getLength(input);
-    int start = 0;
-    ReverseString(input, start, size);
-    cout<<input<<endl;
+    int size =  length(input);
+    // spaceBEletter(input);
+    shift(input, size);
+    for(int i=0;input[i]!='\0';i++)
+    {
+        cout<<input[i];
+    }
+    cout<<endl;
     return 0;
 }
