@@ -2,4 +2,10 @@ from linklist import node, LinklistFunction
 
 ob = LinklistFunction()
 newHead  = ob.createLlist()
-ob.display(newHead)
+# print(newHead)
+ob.display()
+# ob.deletehead()
+
+index = int(input("Enter the index value : "))
+ob.deleteIndexNode(index)
+ob.display()
