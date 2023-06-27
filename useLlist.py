@@ -6,6 +6,37 @@ newHead  = ob.createLlist()
 ob.display()
 # ob.deletehead()
 
-index = int(input("Enter the index value : "))
-ob.deleteIndexNode(index)
-ob.display()
+# index = int(input("Enter the index value : "))
+# ob.deleteIndexNode(index)
+# ob.display()
+
+# data = int(input("Enter the Data value : "))
+
+# print(ob.searchingNode(data))
+
+# ob.insertionAtIndedx(index, data)
+
+# ob.display()
+
+
+# print("length of the LinkList",ob.getLength())
+
+newReverseList = ob.reverse()
+print()
+# ob.display(newReverseList)
+# ob.display()
+
+def reverse(self, head):
+        if(head == None):
+            t = { "first" : None, "second": None}
+            return t
+        
+        temp = self.__reverse(head.next)
+        if(temp['first'] == None):
+            temp['first'] = head
+            temp['second'] = head
+        else:
+            head.next = None
+            temp['second'].next = head
+            temp['second'] = head
+        return temp['first'] 
