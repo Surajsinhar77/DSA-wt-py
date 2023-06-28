@@ -26,12 +26,11 @@ print()
 # ob.display(newReverseList)
 # ob.display()
 
-def reverse(self, head):
+def reverse(head):
         if(head == None):
-            t = { "first" : None, "second": None}
-            return t
+            return { "first" : None, "second": None}
         
-        temp = self.__reverse(head.next)
+        temp = reverse(head.next)
         if(temp['first'] == None):
             temp['first'] = head
             temp['second'] = head
@@ -39,4 +38,4 @@ def reverse(self, head):
             head.next = None
             temp['second'].next = head
             temp['second'] = head
-        return temp['first'] 
+        return temp
