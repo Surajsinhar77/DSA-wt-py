@@ -131,23 +131,38 @@ class LinklistFunction:
         print("Incorrect index")
         return -1
     
-    def __reverse(self, head):
-        if(head == None):
-            t = { "first" : None, "second": None}
-            return t
+    # def __reverse(self, head):
+    #     if(head == None):
+    #         t = { "first" : None, "second": None}
+    #         return t
         
-        temp = self.__reverse(head.next)
-        if(temp['first'] == None):
-            temp['first'] = head
-            temp['second'] = head
-        else:
-            head.next = None
-            temp['second'].next = head
-            temp['second'] = head
-        return temp 
+    #     temp = self.__reverse(head.next)
+    #     if(temp['first'] == None):
+    #         temp['first'] = head
+    #         temp['second'] = head
+    #     else:
+    #         head.next = None
+    #         temp['second'].next = head
+    #         temp['second'] = head
+    #     return temp 
 
-    def reverse(self):
-        t = self.head
-        temp = self.__reverse(t)
-        self.display()
-        return temp['first']
+    # def reverse(self):
+    #     t = self.head
+    #     temp = self.__reverse(t)
+    #     self.display()
+    #     return temp['first']
+
+    def getMid(self):
+        if self.head == None:
+            return 0
+        slow=self.head
+        fast=self.head.next
+        count = 1
+        while(fast != None and fast.next != None):
+            slow = slow.next
+            count+=1
+            if(fast.next.next == None):
+                fast = fast.next
+            else:
+                fast = fast.next.next
+        return slow.data

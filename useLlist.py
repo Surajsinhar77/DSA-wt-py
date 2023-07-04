@@ -21,21 +21,22 @@ ob.display()
 
 # print("length of the LinkList",ob.getLength())
 
-newReverseList = ob.reverse()
+# newReverseList = ob.reverse()
 print()
 # ob.display(newReverseList)
 # ob.display()
 
-def reverse(head):
-        if(head == None):
-            return { "first" : None, "second": None}
+# def reverse(head):
+#         if(head == None):
+#             return { "first" : None, "second": None}
         
-        temp = reverse(head.next)
-        if(temp['first'] == None):
-            temp['first'] = head
-            temp['second'] = head
-        else:
-            head.next = None
-            temp['second'].next = head
-            temp['second'] = head
-        return temp
+#         temp = reverse(head.next)
+#         if(temp['first'] == None):
+#             temp['first'] = head
+#             temp['second'] = head
+#         else:
+#             head.next = None
+#             temp['second'].next = head
+#             temp['second'] = head
+#         return temp
+print(ob.getMid())
