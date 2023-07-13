@@ -8,7 +8,6 @@ class treenode:
         self.data = data
 
 class treenodeFunction:
-    
     def creatTree(self):
         root = None
         data = int(input("Enter the Root data : ")) # 3\ 
