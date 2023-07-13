@@ -11,7 +11,7 @@ def partition(array,f,l):
     while(i<=j):
         while(i<=j  and p >= array[i]):
             i+=1
-        while(i<=j and p <= array[j] ):
+        while(i<=j and p <= array[j]):
             j-=1
         if(i<=j):
             swap(array , i ,j)

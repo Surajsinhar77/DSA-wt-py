@@ -29,6 +29,10 @@ class LinkedList:
         if self.head is None:
             return
 
+# Start mid  and palindrone
+
+
+
     def mid(self):
         slow = fast = self.head
         count = 0
@@ -36,15 +40,13 @@ class LinkedList:
             count += 1
             slow = slow.next
             fast = fast.next.next
-        # print("\nThe index of the mid element is: ", end="")
         return {'first':slow, 'second': count}
 
     def __is_palindrome(self, head, arr):
         if head is None:
             return True
-        
+
         temp = self.__is_palindrome(head.next, arr)
-        # print("This is the count value : ",count," ", count//2, " ", arr)
         if temp:
             if(not arr):
                 return True
@@ -56,6 +58,9 @@ class LinkedList:
             return False
 
     def is_palindrome(self):
+        if(self.head == None):
+            return None  # -1
+        
         prev = temp = self.head
         arr = []
         mid = self.mid()
@@ -65,7 +70,7 @@ class LinkedList:
             temp = temp.next
         i = 0
         k = len(arr)-1
-        
+
         while(i<k):
             temp1 = arr[i]
             arr[i] = arr[k]

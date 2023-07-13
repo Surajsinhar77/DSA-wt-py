@@ -47,13 +47,23 @@
 
 
 
-def check_palindrome(st, i, j):
-    if i <= j:
-        if st[i] == st[j]:
-            return check_palindrome(st, i + 1, j - 1)
-        elif st[i] != st[j]:
-            return False
-    return True
+# def check_palindrome(st, i, j):
+#     if i <= j:
+#         if st[i] == st[j]:
+#             return check_palindrome(st, i + 1, j - 1)
+#         elif st[i] != st[j]:
+#             return False
+#     return True
 
-str = input()
-print(check_palindrome(str, 0, len(str)-1))
+# str = input()
+# print(check_palindrome(str, 0, len(str)-1))
+
+from collections import deque
+q = deque()
+q.append(5)
+q.append(6)
+q.append(7)
+q.append(8)
+
+print(q.popleft())
+print(q)
