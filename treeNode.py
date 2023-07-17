@@ -6,7 +6,7 @@ class treenode:
     childern = []
 
     def __init__(self, data):
-        self.childern = []
+        self.childern = [None]
         self.data = data
 
 class treenodeFunction:
@@ -27,6 +27,7 @@ class treenodeFunction:
             front = pendingNode.get() #   
             n = int(input(f"how many Child do u want to enter : {front.data} : "))
             if(n > 0):
+                front.childern.pop()
                 for i in range(0,n):
                     data = int(input(f'Enter the {front.data} childrens data : '))
                     newNode = treenode(data)
@@ -64,9 +65,35 @@ class treenodeFunction:
     #             pendingQueue.put(front.childern[i])
     #         print()
 
+
+    #Genric Tree
+    def depthForTraversal(self, root):
+        if(root == None):
+            return
+        print("Value : ", root.data, end=" ")
+        for i in range(0, len(root.childern)):
+            self.depthForTraversal(root.childern[i])
+
+    def __sumofNode(self, root,ans):
+        if(root == None):
+            return ans
+        for i in range(0, len(root.childern)):
+            self.__sumofNode(root.childern[i], ans+root.data)
+            return ans
+
+    def sumOfNode(self , root):
+        ans = 0
+        return self.__sumofNode(root, ans)
+
+
+        
 ob = treenodeFunction()
 root = ob.creatTree()
-ob.display(root)
+ob.depthForTraversal(root)
+ans = ob.sumOfNode(root)
+print(ans)
+
+# ob.display(root)
 
 
 
