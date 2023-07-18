@@ -74,24 +74,51 @@ class treenodeFunction:
         for i in range(0, len(root.childern)):
             self.depthForTraversal(root.childern[i])
 
-    def __sumofNode(self, root,ans):
-        if(root == None):
-            return ans
-        for i in range(0, len(root.childern)):
-            self.__sumofNode(root.childern[i], ans+root.data)
-            return ans
+            # 1 2 3 4 5 6 7 8 9 11
+
+    # def __sumofNode(self, root, ans):
+        
+
 
     def sumOfNode(self , root):
         ans = 0
-        return self.__sumofNode(root, ans)
+        if(root == None):
+            return 0
+        # ans+=root.data
+        pendingNode = Queue()
+        pendingNode.put(root)
 
+        while(pendingNode.qsize() > 0 ):
+            front = pendingNode.get()
+            ans += front.data
+            if(front.childern[0] == None):
+                continue
+            for i in range(0, len(front.childern)):
+                pendingNode.put(front.childern[i])
+        return ans 
 
+        def sumOfNode2(self , root):
+        ans = 0
+        if(root == None):
+            return 0
+        ans+=root.data
+        pendingNode = Queue()
+        pendingNode.put(root)
+
+        while(pendingNode.qsize() > 0 ):
+            front = pendingNode.get()
+            if(front.childern[0] == None):
+                continue
+            for i in range(0, len(front.childern)):
+                ans += front.data
+                pendingNode.put(front.childern[i])
+        return ans 
         
 ob = treenodeFunction()
 root = ob.creatTree()
-ob.depthForTraversal(root)
+# ob.depthForTraversal(root)
 ans = ob.sumOfNode(root)
-print(ans)
+print("Ans : ", ans)
 
 # ob.display(root)
 
