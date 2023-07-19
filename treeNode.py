@@ -97,23 +97,38 @@ class treenodeFunction:
                 pendingNode.put(front.childern[i])
         return ans 
 
-        def sumOfNode2(self , root):
-        ans = 0
-        if(root == None):
-            return 0
-        ans+=root.data
-        pendingNode = Queue()
-        pendingNode.put(root)
+        # def sumOfNode2(self , root):
+        # ans = 0
+        # if(root == None):
+        #     return 0
+        # ans+=root.data
+        # pendingNode = Queue()
+        # pendingNode.put(root)
 
-        while(pendingNode.qsize() > 0 ):
-            front = pendingNode.get()
-            if(front.childern[0] == None):
-                continue
-            for i in range(0, len(front.childern)):
-                ans += front.data
-                pendingNode.put(front.childern[i])
-        return ans 
-        
+        # while(pendingNode.qsize() > 0 ):
+        #     front = pendingNode.get()
+        #     if(front.childern[0] == None):
+        #         continue
+        #     for i in range(0, len(front.childern)):
+        #         ans += front.data
+        #         pendingNode.put(front.childern[i])
+        # return ans 
+
+    def inputByRec(self): #   1 2 4 0 5 0
+        root = None
+        data = int(input(" Enter Root data : "))
+        newNode = treenode(data)
+        root = newNode
+        n = int(input("enter the no of Childs : "))
+
+        for i in range(n):
+            child = self.inputByRec()
+            if(root.childern[0] == None):
+                root.childern.pop()
+            root.childern.append(child)
+        return root
+
+
 ob = treenodeFunction()
 root = ob.creatTree()
 # ob.depthForTraversal(root)
