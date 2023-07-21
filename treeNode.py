@@ -12,7 +12,7 @@ class treenode:
 class treenodeFunction:
     def creatTree(self):
         root = None
-        data = int(input("Enter the Root data : ")) # 3\ 
+        data = int(input("Enter the Root data CreateTree : ")) # 3\ 
 
         if(-1 != data):
             newNode = treenode(data)
@@ -128,12 +128,26 @@ class treenodeFunction:
             root.childern.append(child)
         return root
 
+    
 
-ob = treenodeFunction()
-root = ob.creatTree()
+
+# def heightOfTree(root):
+    
+
+# ob = treenodeFunction()
+
+# root = ob.inputByRec()
+# root = ob.creatTree()
 # ob.depthForTraversal(root)
-ans = ob.sumOfNode(root)
-print("Ans : ", ans)
+
+
+# ans = ob.sumOfNode(root)
+# print("Ans : ", ans)
+
+# print("Height og the Tree : ",heightOfTree(root))
+
+
+
 
 # ob.display(root)
 
