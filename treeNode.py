@@ -128,7 +128,16 @@ class treenodeFunction:
             root.childern.append(child)
         return root
 
-    
+    def DeleteLeafNode(self, root):
+        if(root == None):
+            return None
+        
+        if(root.left == None and root.right == None):
+            return None
+
+        root.left = self.DeleteLeafNode(root.left)
+        root.right = self.DeleteLeafNode(root.right)
+        return root
 
 
 # def heightOfTree(root):
