@@ -29,6 +29,6 @@ class Binaryfunctions:
         self.dispaybinaryTree(root.left)
         self.dispaybinaryTree(root.right)
 
-ob = Binaryfunctions()
-root = ob.createBinaryTree()
-ob.dispaybinaryTree(root)
+# ob = Binaryfunctions()
+# root = ob.createBinaryTree()
+# ob.dispaybinaryTree(root)
