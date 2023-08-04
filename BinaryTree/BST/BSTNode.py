@@ -10,16 +10,16 @@ class BinaryNode:
 
 class Binaryfunctions:
     
-    def createBinaryTree(self):
+    def createBinaryTree(self,inputArray):
         root = None
-        data = int(input("enter Data : "))
+        data = inputArray.pop()
         if(data == -1):
             return root
         newTreeNode = BinaryNode(data)
         root = newTreeNode
 
-        root.left = self.createBinaryTree()
-        root.right = self.createBinaryTree()
+        root.left = self.createBinaryTree(inputArray)
+        root.right = self.createBinaryTree(inputArray)
         return root
 
     def dispaybinaryTree(self, root):
