@@ -13,6 +13,8 @@ class Binaryfunctions:
     def createBinaryTree(self,inputArray):
         root = None
         data = inputArray.pop()
+        print(" ",data, end=" ")
+        
         if(data == -1):
             return root
         newTreeNode = BinaryNode(data)
