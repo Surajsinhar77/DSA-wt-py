@@ -142,6 +142,44 @@ def bfs(root):
             q.append(front.right)
 
 
+def SearchData(root, delData):
+    if(root == None):
+        return None
+    
+    if(root.data == delData):
+        return root
+    left = SearchData(root.left, delData)
+    if(left != None):
+        return left
+    right = SearchData(root.right, delData)
+    if(right != None):
+        return right
+    
+
+def delNodeInCT(root , toSwap):
+    if(root == None):
+        return None
+
+    pendingNode = []
+    pendingNode.append(root)
+
+    while(len(pendingNode) > 0):
+        front = pendingNode.pop(0)
+
+        if(front.left != None):
+            pendingNode.append(front.left)
+
+        if(front.right != None):
+            pendingNode.append(front.right)
+        
+        if(len(pendingNode) == 0):
+            print("deleting ... ", toSwap.data , front.data)
+            temp = front.data
+            front.data = toSwap.data
+            toSwap.data = temp
+
+            
+    return root
 
 ob = Binaryfunctions()
 # paste your Full input element in the Array 
@@ -154,5 +192,10 @@ root = createCompletetree()
 # key = int(input("Enter the element to delete :"))
 # root = delNode(root, key)
 # print(root.data)
-ob.dispaybinaryTree(root)
-bfs(root)
+
+delData = int(input("Delete Data : "))
+toSwap = SearchData(root, delData)
+if(toSwap):
+    print("delete Function is Working ...")
+    root = delNodeInCT(root, toSwap)
+    bfs(root)
