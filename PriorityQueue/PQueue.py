@@ -62,3 +62,4 @@ class PriorityQueue:
                     break
             left = (currentIndex*2)+1
             right = (currentIndex*2)+2
+        return minValue
