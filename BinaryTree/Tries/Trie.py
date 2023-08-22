@@ -22,8 +22,22 @@ class trie:
         self.__insert(root.child[index], word[1:])
 
     def insertWord(self,word):
-        self.__insert(self.root, word)
+        self.__insert(self.root, word) # col  #am 
+
+    def __searchingWord(self, root, word):
+        if word == '':
+            return root.finish
+        
+        index = ord(word[0])-ord('a')
+        if(root.child[index] == None):
+            return False
+        return self.__searchingWord(root.child[index], word[1:])
+
+    def serchingWord(self, word):
+        return self.__searchingWord(self.root, word)
 
 ob = trie()
-ob.insertWord("ant")
+ob.insertWord("girls")
+ob.insertWord("girl")
+print(ob.serchingWord("girl"))
 print("Done ")
